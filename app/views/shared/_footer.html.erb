@@ -1,0 +1,7 @@
+<footer class="footer">
+  <% if user_signed_in? %>
+    <div class="footer-photo-button">
+      <%= link_to "NEW PHOTO", new_image_path, class: "photo-button" %>
+    </div>
+  <% end %>
+</footer>

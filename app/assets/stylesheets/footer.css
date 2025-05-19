@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-top: 1px solid white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-photo-button {
+  text-align: center;
+}
+
+.photo-button {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 4px 20px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 26px;
+  word-spacing: 0.4em; 
+}
+
+.photo-button:hover {
+  background-color: #222;
+}
