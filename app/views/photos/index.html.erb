@@ -1,0 +1,14 @@
+<main>
+サンプル
+
+<h3>トップページ</h3>
+
+<% @photos.each do |photo| %>
+  <div class="posted-content">
+    <%= image_tag photo.images[0] %><br>
+    <%= photo.title%><br>
+    <%# link_to '詳細', post_path(post.id)%>
+  </div>
+<% end %>
+
+</main>
