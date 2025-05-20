@@ -1,7 +1,7 @@
 <footer class="footer">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && !(controller_name == 'photos' && action_name == 'new')  %>
     <div class="footer-photo-button">
-      <%= link_to "NEW PHOTO", new_image_path, class: "photo-button" %>
+      <%= link_to "NEW PHOTO", new_photo_path, class: "photo-button" %>
     </div>
   <% end %>
 </footer>

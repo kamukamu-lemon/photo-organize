@@ -4,7 +4,7 @@
  <%= flash[:alert] %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true,placeholder:"PC・携帯どちらでも可", autocomplete: "email" %>
+    <%= f.email_field :email, class:"input-default", autofocus: true,placeholder:"PC・携帯どちらでも可", autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -20,6 +20,5 @@
    <%= link_to "NEW", new_user_registration_path, class: "white-btn" %>
   </div>
 </main>
-
 
 

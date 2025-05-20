@@ -7,17 +7,6 @@
   gap: 30px;
 }
 
-.field label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.field text,
-.field input {
-  padding: 10px;
-  width: 250px;
-  
-}
 
 .register-btn {
   margin-top: 50px;
