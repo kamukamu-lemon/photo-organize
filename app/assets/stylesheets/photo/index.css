@@ -16,6 +16,15 @@
   height: 20vh;
 }
 
+.photo-link {
+  text-decoration: none;
+  color: black;
+}
+
+.photo-title {
+  text-align: center; 
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -25,6 +34,3 @@ li {
   padding: 20px;
 }
 
-.photo-title {
-  text-align: center;
-}
