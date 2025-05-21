@@ -1,33 +1,33 @@
-<main>
-<div class="photo-register-main">
-  <%= form_with model: @photo, local: true do |f| %>
-     <%= render 'shared/error_messages', model: @photo %>
+<div class="main">
+  <div class="photo-register-main">
+    <%= form_with model: @photo, local: true do |f| %>
+       <%= render 'shared/error_messages', model: @photo %>
 
-   <div class="image-field">
+     <div class="image-field">
         <div id="previews"></div>
         <div class="click-upload">
-          <%= f.label :images, "PHOTO SELECT" %><br />
+          <p>
+            Select photos
+          </p>
+          <br />
           <%= f.file_field :images, name:'photo[images][]', data: {index: 0}  %>
         </div>
-    </div>
-
-    <div class="field">
+     </div>
+     <div class="field">
       <%= f.label :title %><br />
       <%= f.text_field :title, class:"photos-text", maxlength:"40", autofocus: true %>
-    </div>
-    <div class="field">
+     </div>
+     <div class="field">
       <%= f.label :memo %><br />
       <%= f.text_area :memo, class:"photos-text", rows:"2", maxlength:"250" %>
-    </div>
+     </div>
 
-    <div class='register-btn'>
+     <div class='register-btn'>
       <%= f.submit "REGISTER" ,class:"black-btn" %>
-    </div> 
-  <% end %>
+     </div> 
+    <% end %>
+    <div class="back-btn-wrapper">
+       <%= link_to "BACK", authenticated_root_path, class: "back-btn" %>
+    </div>
+  </div>
 </div>
-   <%= link_to "BACK", authenticated_root_path, class: "white-btn" %>
- 
-</main>
-  
-
-

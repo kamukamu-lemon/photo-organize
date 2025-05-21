@@ -1,0 +1,30 @@
+.main {
+  background-color: white;
+  margin-top: 120px;
+  margin-bottom: 100px;
+}
+
+.photo-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 50px;
+}
+.photo-img {
+  width: 20vh;
+  height: 20vh;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 20px;
+}
+
+.photo-title {
+  text-align: center;
+}
