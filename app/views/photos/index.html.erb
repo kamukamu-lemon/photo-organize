@@ -1,14 +1,18 @@
-<main>
-サンプル
+<div class="main">
+  <ul class="photo-lists">
 
-<h3>トップページ</h3>
+    <% @photos.each do |photo| %>
+    <li class="list">
+      <%# link_to photo_path(photo) do %>
+      <div class="photo-img-content">
+        <%= image_tag photo.images[0], class: "photo-img" if photo.image.attached? %><br>
+        <h3 class="photo-title">
+        <%= photo.title%><br>
+        </h3>
+      </div>
+      <%# end %>
+    </li>
+   <% end %>
+  </ul>
 
-<% @photos.each do |photo| %>
-  <div class="posted-content">
-    <%= image_tag photo.images[0] %><br>
-    <%= photo.title%><br>
-    <%# link_to '詳細', post_path(post.id)%>
-  </div>
-<% end %>
-
-</main>
+</div>

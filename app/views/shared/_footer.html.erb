@@ -1,5 +1,5 @@
 <footer class="footer">
-  <% if user_signed_in? && !(controller_name == 'photos' && action_name == 'new')  %>
+  <% if controller.controller_name == 'photos' && controller.action_name == 'index' %>
     <div class="footer-photo-button">
       <%= link_to "NEW PHOTO", new_photo_path, class: "photo-button" %>
     </div>
