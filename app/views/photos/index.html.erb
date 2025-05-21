@@ -5,7 +5,7 @@
     <li class="list">
       <%# link_to photo_path(photo) do %>
       <div class="photo-img-content">
-        <%= image_tag photo.images[0], class: "photo-img" if photo.image.attached? %><br>
+        <%= image_tag photo.images[0], class: "photo-img" if photo.images.attached? %><br>
         <h3 class="photo-title">
         <%= photo.title%><br>
         </h3>
