@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="photo-show">
+    
+    <div class="photo-box">
+      <h2 class="photo-title">
+        <%= @photo.title %>
+      </h2>
+
+      <div class="photo-image-content">
+        <% @photo.images.each do |image| %>
+          <%= image_tag image, class:"photo-image" %>    
+        <% end %>
+      </div>
+      <div class="photo-memo" >
+        <%= @photo.memo %>
+      </div>
+    </div>
+
+     <div class='edit-btn-wrapper'>
+      <%= link_to "edit", edit_photo_path(@photo), class:"edit-btn" %>
+     </div> 
+    <div class="delete-btn-wrapper">
+       <%= link_to "delete", photo_path(@photo), data: { turbo_method: :delete}, class: "delete-btn" %>
+    </div>
+  </div>
+</div>

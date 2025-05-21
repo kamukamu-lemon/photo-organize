@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    @photos = Photo.all.order(created_at: :desc)
   end
 
   def new
@@ -14,6 +14,10 @@ class PhotosController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @photo = Photo.find(params[:id])
   end
 
   private
