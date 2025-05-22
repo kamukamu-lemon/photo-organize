@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-before_action :set_photo, only: [:show, :edit, :update, ]
+before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   def index
     @photos = Photo.all.order(created_at: :desc)
@@ -34,10 +34,10 @@ before_action :set_photo, only: [:show, :edit, :update, ]
     end
   end
 
-  #def destroy
-    #@photo.destroy
-    #redirect_to authenticated_root_path
-  #end
+  def destroy
+    @photo.destroy
+    redirect_to authenticated_root_path
+  end
 
   private
 

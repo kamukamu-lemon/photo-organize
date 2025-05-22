@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,10 +11,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  z-index: 1000;
   border-bottom: 1px solid white;
   flex-wrap: wrap;
 }
+
 
 
 .header-title {
