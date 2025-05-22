@@ -1,0 +1,30 @@
+<%= form_with model: @photo, id: 'photos_form', html: { data: { turbo: false }} do |f| %>
+  <%= render 'shared/error_messages', model: @photo %>
+
+  <div class="photos-image-field">
+    <div id="previews"></div>
+    <div class="click-upload">
+      <p>Select photos</p>
+      <br />
+      <%= f.file_field :images, name: 'photo[images][]', data: { index: 0 } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, class: "photos-form-text", maxlength: "40", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :memo %><br />
+    <%= f.text_area :memo, class: "photos-form-text", rows: "2", maxlength: "250" %>
+  </div>
+
+  <div class="<%= form_mode == :edit ? 'edit-btn-wrapper' : 'register-btn' %>">
+    <%= f.submit form_mode == :edit ? "EDIT" : "REGISTER", class: form_mode == :edit ? "edit-submit-btn" : "black-btn" %>
+  </div>
+<% end %>
+
+<div class="back-btn-wrapper">
+  <%= link_to "BACK", cancel_path, class: "back-btn" %>
+</div>
