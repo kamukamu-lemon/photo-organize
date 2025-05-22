@@ -42,7 +42,7 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :memo, { images: [] }).merge(user_id: current_user.id)
+    params.require(:photo).permit(:title, :memo, {images: []}).merge(user_id: current_user.id)
   end
 
   def set_photo

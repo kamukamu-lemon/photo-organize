@@ -1,32 +1,3 @@
 <div class="photos-edit-main">
-
-  <%= form_with model: @photo, local: true do |f| %>
-       <%= render 'shared/error_messages', model: @photo %>
-
-     <div class="photos-image-field">
-        <div id="previews"></div>
-        <div class="click-upload">
-          <p>
-            Select photos
-          </p>
-          <br />
-          <%= f.file_field :images, name:'photo[images][]', data: {index: 0}  %>
-        </div>
-     </div>
-     <div class="field">
-      <%= f.label :title %><br />
-      <%= f.text_field :title, class:"photos-form-text", maxlength:"40", autofocus: true %>
-     </div>
-     <div class="field">
-      <%= f.label :memo %><br />
-      <%= f.text_area :memo, class:"photos-form-text", rows:"2", maxlength:"250" %>
-     </div>
-
-     <div class='edit-btn-wrapper'>
-      <%= f.submit "EDIT" ,class:"edit-submit-btn" %>
-     </div> 
-    <% end %>
-    <div class="back-btn-wrapper">
-       <%= link_to "BACK", photo_path(@photo), class: "back-btn" %>
-    </div>
-  </div>
+  <%= render "shared/form", form_mode: :edit, cancel_path: photo_path(@photo) %>
+</div>
