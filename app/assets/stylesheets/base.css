@@ -5,6 +5,7 @@ html, body {
   font-family: 'Playfair Display SC', serif;
   font-style: italic;
   font-weight: 400;
+  overflow-y: auto;
 }
 
 main {
@@ -16,4 +17,5 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }

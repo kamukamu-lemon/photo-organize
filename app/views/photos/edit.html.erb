@@ -1,5 +1,6 @@
-  <div class="photos-new-main">
-    <%= form_with model: @photo, local: true do |f| %>
+<div class="photos-edit-main">
+
+  <%= form_with model: @photo, local: true do |f| %>
        <%= render 'shared/error_messages', model: @photo %>
 
      <div class="photos-image-field">
@@ -21,11 +22,11 @@
       <%= f.text_area :memo, class:"photos-form-text", rows:"2", maxlength:"250" %>
      </div>
 
-     <div class='register-btn'>
-      <%= f.submit "REGISTER" ,class:"black-btn" %>
+     <div class='edit-btn-wrapper'>
+      <%= f.submit "EDIT" ,class:"edit-submit-btn" %>
      </div> 
     <% end %>
     <div class="back-btn-wrapper">
-       <%= link_to "BACK", authenticated_root_path, class: "back-btn" %>
+       <%= link_to "BACK", photo_path(@photo), class: "back-btn" %>
     </div>
   </div>

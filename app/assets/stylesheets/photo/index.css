@@ -1,27 +1,27 @@
-.main {
+.photos-index-main {
   background-color: white;
   margin-top: 120px;
   margin-bottom: 100px;
 }
 
-.photo-lists {
+.photos-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   margin: 50px;
 }
-.photo-img {
+.photos-img {
   width: 20vh;
   height: 20vh;
 }
 
-.photo-link {
+.photos-link {
   text-decoration: none;
   color: black;
 }
 
-.photo-title {
+.photos-title {
   text-align: center; 
 }
 

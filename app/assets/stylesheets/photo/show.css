@@ -1,31 +1,32 @@
-.photo-show {
+.photos-show-main {
   width: 100vh;
- 
+  margin-top: 120px; 
+  margin-bottom: 100px; 
   flex-direction: column;
   align-items: center;
   
 }
 
-.photo-box {
+.photos-show-box {
   width: 70vw;
   flex-direction: row;
   align-items: center;
   padding: 10vh 15vh 5vh 15vh ;
 }
 
-.photo-show.photo-title {
+.photos-show-title {
   text-align: center;
   font-size: 50px;
 }
 
-.photo-memo {
+.photos-show-memo {
   text-align: center;
   font-size: 20px;
 }
 
 
 
-.photo-image-content {
+.photos-image-content {
   display: flex;
   flex-direction: column; /* 縦並びにする */
   align-items: center;     /* 中央揃え */
@@ -33,7 +34,7 @@
   margin-bottom: 30px;
 }
 
-.photo-image {
+.photos-show-image {
   height: 50vh;
   width: 60vw;
   min-height: 500px;
