@@ -28,6 +28,20 @@
   min-width: 250px;
 }
 
+.photos-upload-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.form-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .black-btn {
   margin: 50px auto;
   width: 200px;
