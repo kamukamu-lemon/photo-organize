@@ -1,34 +1,36 @@
-<%= form_with model: @photo, id: 'photos_form', local:true do |f| %>
+<%= form_with model: @photo, id: 'photos_form', local: true, html: { class: "max-w-md w-full mx-auto" } do |f| %>
   <%= render 'shared/error_messages', model: @photo %>
 
-  <div class="photos-upload-wrapper">
-   <div class="photos-image-field">
-    <div id="previews"></div>
-    <div class="click-upload">
-      <p>Select photos</p>
-      <br />
-      <%= f.file_field :images, name: 'photo[images][]', data: { index: 0 } %>
+  <!-- 画像アップロード -->
+  <div class="mb-6">
+    <label class="block text-gray-700 font-semibold mb-2 font-title italic">Photos</label>
+    <div class="border border-dashed border-gray-400 p-4 rounded-md bg-white">
+      <div id="previews" class="flex flex-wrap gap-2 mb-4"></div>
+      <div class="click-upload">
+        <%= f.file_field :images, name: 'photo[images][]', data: { index: 0 }, class: "custom-file-button" %>
+      </div>
     </div>
   </div>
+
+  <!-- タイトル -->
+  <div class="mb-4">
+    <%= f.label :title, class: "block text-gray-700 font-semibold mb-2 font-title italic" %>
+    <%= f.text_field :title, class: "w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400", maxlength: "40", autofocus: true %>
   </div>
 
-<div class="form-fields-wrapper">
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, class: "photos-form-text", maxlength: "40", autofocus: true %>
+  <!-- メモ -->
+  <div class="mb-4">
+    <%= f.label :memo, class: "block text-gray-700 font-semibold mb-2 font-title italic" %>
+    <%= f.text_area :memo, maxlength: 250, class: "w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 min-h-[60px] resize-none", oninput: "this.style.height = ''; this.style.height = this.scrollHeight + 'px'" %>
   </div>
 
-  <div class="field">
-    <%= f.label :memo %><br />
-    <%= f.text_area :memo, class: "photos-form-text", rows: "2", maxlength: "250" %>
-  </div>
-</div>
-
-  <div class="<%= form_mode == :edit ? 'edit-btn-wrapper' : 'register-btn' %>">
-    <%= f.submit form_mode == :edit ? "EDIT" : "REGISTER", class: form_mode == :edit ? "edit-submit-btn" : "black-btn" %>
+  <!-- サブミットボタン -->
+  <div class="text-center mt-6">
+    <%= f.submit form_mode == :edit ? "EDIT" : "REGISTER", class: "btn-black" %>
   </div>
 <% end %>
 
-<div class="back-btn-wrapper">
-  <%= link_to "BACK", cancel_path, class: "back-btn" %>
+<!-- 戻るボタン -->
+<div class="text-center mt-6">
+  <%= link_to "BACK", cancel_path, class: "btn-white-raised" %>
 </div>
