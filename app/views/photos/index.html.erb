@@ -8,10 +8,9 @@
           <%= image_tag photo.images[0], class: "w-full h-[180px] object-cover" %>
         <% end %>
         <div class="p-2 text-center">
-          <h3 class="text-sm font-semibold text-gray-800 truncate" style="font-family: 'Playfair Display SC', 'Shippori Mincho', serif; font-style: italic;">
-  <%= photo.title %>
-</h3>
-
+          <h3 class="text-sm font-semibold text-gray-800 truncate font-title">
+            <%= photo.title %>
+          </h3>
         </div>
       <% end %>
     </li>
