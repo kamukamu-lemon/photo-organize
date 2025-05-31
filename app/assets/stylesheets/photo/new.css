@@ -1,0 +1,68 @@
+.photos-new-main {
+  /*margin-top: 100px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photos-new label {
+  margin: 10px;
+}
+.photos-form-text {
+  padding: 10px;
+  width: 500px;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+
+.photos-image-field{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.photos-upload-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.form-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.black-btn {
+  margin: 50px auto;
+  width: 200px;
+  display: block;
+
+}
+.back-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0px auto 0 auto; 
+  padding: 10px 65px;
+  display: inline-block; 
+  box-sizing: border-box;
+}
+
+.back-btn-wrapper {
+  text-align: center;
+}

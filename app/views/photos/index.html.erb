@@ -1,20 +1,18 @@
-<% content_for :main_class, 'max-w-7xl' %>
-<div class="p-4">
-  <ul class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  <% @photos.each do |photo| %>
-    <li class="flex flex-col bg-white rounded-2xl shadow overflow-hidden">
-      <%= link_to photo_path(photo), class: "flex-1 flex flex-col" do %>
-        <% if photo.images.attached? %>
-          <%= image_tag photo.images[0], class: "w-full h-[180px] object-cover" %>
-        <% end %>
-        <div class="p-2 text-center">
-          <h3 class="text-sm font-semibold text-gray-800 truncate" style="font-family: 'Playfair Display SC', 'Shippori Mincho', serif; font-style: italic;">
-  <%= photo.title %>
-</h3>
+<div class="photos-index-main">
+  <ul class="photos-lists">
 
-        </div>
+    <% @photos.each do |photo| %>
+    <li class="list">
+      <%= link_to photo_path(photo), class: "photos-link" do %>
+      <div class="photos-img-content">
+        <%= image_tag photo.images[0], class: "photos-img" if photo.images.attached? %><br>
+        <h3 class="photos-title">
+        <%= photo.title%><br>
+        </h3>
+      </div>
       <% end %>
     </li>
-  <% end %>
-</ul>
+   <% end %>
+  </ul>
+
 </div>
