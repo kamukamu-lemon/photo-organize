@@ -1,0 +1,34 @@
+<header class="fixed top-0 left-0 right-0 bg-white border-b shadow z-50 h-20">
+  <div class="flex items-center justify-between px-4 w-full max-w-7xl mx-auto h-full">
+
+    <!-- 左エリア：今後追加予定用 -->
+    <div class="w-1/3 flex items-center">
+      <%# ハンバーガーや検索バーなど今後追加予定 %>
+    </div>
+
+    <!-- 中央エリア：タイトル -->
+    <div class="w-1/3 flex justify-center text-center">
+      <% if controller.action_name == 'index' %>
+        <h1 class="text-2xl font-bold font-title italic tracking-wide">
+          Photo Organize
+        </h1>
+      <% else %>
+        <%= link_to 'Photo Organize', authenticated_root_path,
+              class: 'text-2xl font-bold font-title italic tracking-wide hover:underline' %>
+      <% end %>
+    </div>
+
+    <!-- 右エリア：ユーザー名とログアウト -->
+    <div class="w-1/3 flex flex-col items-end text-right">
+      <% if user_signed_in? %>
+        <span class="text-sm font-semibold text-gray-700">
+          <%= current_user.nickname %>
+        </span>
+        <%= link_to 'LOG OUT', destroy_user_session_path,
+              data: { turbo_method: :delete },
+              class: 'btn-danger-flat-mono mt-1' %>
+      <% end %>
+    </div>
+
+  </div>
+</header>

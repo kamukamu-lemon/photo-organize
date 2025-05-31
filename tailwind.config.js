@@ -4,7 +4,7 @@ module.exports = {
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/assets/stylesheets/**/*.{css}',
+    './app/assets/tailwind/**/*.{css}',
   ],
   theme: {
     extend: {

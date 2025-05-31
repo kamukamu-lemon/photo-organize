@@ -1,20 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Baseレイヤー */
-@layer base {
-  body {
-    font-family: 'Shippori Mincho', serif;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Playfair Display SC', 'Shippori Mincho', serif;
-    font-style: italic;
-  }
-}
-
-/* Componentsレイヤー */
+/* Components: カスタムクラス（btnなど） */
 @layer components {
   .btn-black {
     @apply px-8 py-4 bg-black text-white text-xl font-title italic rounded-md shadow hover:bg-gray-800 transition;
@@ -37,18 +23,31 @@
   }
 }
 
-/* Utilitiesレイヤー */
+/* Base: リセット・要素ごとのスタイル */
+@layer base {
+  body {
+    font-family: 'Shippori Mincho', serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display SC', 'Shippori Mincho', serif;
+    font-style: italic;
+  }
+}
+
+/* Utilities: ユーティリティクラスの追加定義 */
 @layer utilities {
   .grid-auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
+  /* 独自ユーティリティ（font-title）を追加 */
   .font-title {
     font-family: 'Playfair Display SC', 'Shippori Mincho', serif;
   }
 }
 
-/* Optional: メディアクエリ */
+/* メディアクエリ：レスポンシブ補助 */
 @media (max-width: 640px) {
   .grid-auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

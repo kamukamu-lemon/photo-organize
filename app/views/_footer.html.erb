@@ -1,0 +1,15 @@
+<% unless controller.controller_name.in?(%w[registrations sessions]) %>
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50 h-20">
+    <div class="flex justify-between items-center px-4 h-full max-w-7xl mx-auto">
+
+      <!-- 左：NEW PHOTO -->
+      <%= link_to "NEW PHOTO", new_photo_path, class: "btn-black" %>
+
+      <!-- 右：TOP PAGE（indexでは非表示） -->
+      <% unless controller.controller_name == 'photos' && controller.action_name == 'index' %>
+        <%= link_to "TOP PAGE", authenticated_root_path, class: "btn-white-raised" %>
+      <% end %>
+
+    </div>
+  </footer>
+<% end %>

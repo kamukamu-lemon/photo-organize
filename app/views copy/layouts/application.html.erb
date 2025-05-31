@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <title>PhotoOrganize</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,400;1,700&family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">
+    <%# stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="flex flex-col min-h-screen h-full">
+  
+    <%= render "shared/header" %>
+  <main class="flex-1 px-4 py-12 mx-auto <%= content_for?(:main_class) ? yield(:main_class) : 'max-w-3xl' %>">
+    <%= yield %>
+  </main>
+    <%= render "shared/footer" %>
+  </body>
+</html>

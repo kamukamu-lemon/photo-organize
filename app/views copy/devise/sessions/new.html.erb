@@ -1,0 +1,28 @@
+<div class="max-w-md w-full mx-auto bg-white rounded-xl  p-6">
+  <%= form_with model: resource, url: user_session_path, id: 'new_user', local: true do |f| %>
+    <% if flash[:alert].present? %>
+      <div class="text-red-600 font-bold text-center mb-4">
+       <%= flash[:alert] %>
+      </div>
+    <% end %>
+    
+
+    <div class="mb-4">
+      <%= f.label :email, class: "block text-gray-700 font-semibold mb-2" %>
+      <%= f.email_field :email, class: "w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400", placeholder: "PC・携帯どちらでも可", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :password, class: "block text-gray-700 font-semibold mb-2" %>
+      <%= f.password_field :password, class: "w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" %>
+    </div>
+
+    <div class="text-center mt-6">
+      <%= f.submit "LOG IN", class: "btn-black" %>
+    </div>
+  <% end %>
+
+  <div class="text-center mt-6">
+    <%= link_to "NEW", new_user_registration_path, class: "btn-white-raised" %>
+  </div>
+</div>
