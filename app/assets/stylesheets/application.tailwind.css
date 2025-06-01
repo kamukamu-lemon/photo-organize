@@ -5,7 +5,7 @@
 /* Componentsレイヤー */
 @layer components {
   .btn-black {
-    @apply px-8 py-4 bg-black text-white text-xl rounded-md shadow hover:bg-gray-800 transition;
+    @apply px-8 py-4 bg-black text-white text-xl rounded-md shadow hover:bg-gray-700 transition;
   }
 
   .btn-white-raised {
