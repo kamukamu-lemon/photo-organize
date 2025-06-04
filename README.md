@@ -42,7 +42,7 @@ https://photo-organize.onrender.com
   
 ## 主要機能  
 **一覧ページ(PC)**  
-[![Image from Gyazo](https://i.gyazo.com/d6016e6ff0238c6641512a4a71b6ba31.gif)](https://gyazo.com/d6016e6ff0238c6641512a4a71b6ba31)  
+[![Image from Gyazo](https://i.gyazo.com/834f91d27c374e273ee6708adead3e21.jpg)](https://gyazo.com/834f91d27c374e273ee6708adead3e21)
   
 **詳細ページ(PC)**  
 [![Image from Gyazo](https://i.gyazo.com/dd8298446feeed5080cc4b26009bf87f.gif)](https://gyazo.com/dd8298446feeed5080cc4b26009bf87f)  
@@ -51,12 +51,9 @@ https://photo-organize.onrender.com
 [![Image from Gyazo](https://i.gyazo.com/cf81c6962891f086954913b0d5cf81a9.gif)](https://gyazo.com/cf81c6962891f086954913b0d5cf81a9)
 
 **一覧ページ(スマートフォン)**  
-[![Image from Gyazo](https://i.gyazo.com/27144c2a70be7a28b0bc046ddb9f3720.gif)](https://gyazo.com/27144c2a70be7a28b0bc046ddb9f3720)  
+[![Image from Gyazo](https://i.gyazo.com/c8ddd7e848d3c084bdb5b16b73d47aba.jpg)](https://gyazo.com/c8ddd7e848d3c084bdb5b16b73d47aba) 
   
-**詳細ページ(スマートフォン)**  
-[![Image from Gyazo](https://i.gyazo.com/ed569e1ca366476de947ba597e4bc813.gif)](https://gyazo.com/ed569e1ca366476de947ba597e4bc813)  
-  
-  
+  t
   
 ## データベース設計  
 <img src="./images/er.png" width="600" alt="ER図">
@@ -69,7 +66,7 @@ https://photo-organize.onrender.com
   
 ## 開発環境  
 - **フロントエンド**: HTML / CSS / JavaScript / Tailwind CSS 3.3（tailwindcss-rails tailwindcss-ruby 使用）  
-- **バックエンド**: Ruby 3.2 / Ruby on Rails 7.1  
+- **サーバーサイド**: Ruby 3.2 / Ruby on Rails 7.1  
 - **認証機能**: Devise  
 - **画像投稿**: Active Storage  
 - **データベース**: MySQL（開発） / PostgreSQL（本番）  
