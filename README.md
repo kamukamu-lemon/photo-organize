@@ -29,8 +29,8 @@ https://photo-organize.onrender.com
 1. ログイン、または新規登録を行い一覧ページへ  
 2. 一覧ページの How To を参考に写真登録ページへ進む  
 3. 写真登録ページでは一度に最大10枚まで掲載  
-4. 投稿した写真は一覧ページからのクリックで拡大画像での確認が可能  
-  
+4. 投稿した写真は一覧ページからのクリックで拡大画像での詳細確認が可能  
+5. titleかmemoからの検索で、該当の一覧表示が可能 
   
   
 ## 開発の経緯  
@@ -42,7 +42,7 @@ https://photo-organize.onrender.com
   
 ## 主要機能  
 **一覧ページ(PC)**  
-[![Image from Gyazo](https://i.gyazo.com/834f91d27c374e273ee6708adead3e21.jpg)](https://gyazo.com/834f91d27c374e273ee6708adead3e21)
+[![Image from Gyazo](https://i.gyazo.com/69a31235d1b76f72897cdc757b817570.jpg)](https://gyazo.com/69a31235d1b76f72897cdc757b817570)
   
 **詳細ページ(PC)**  
 [![Image from Gyazo](https://i.gyazo.com/dd8298446feeed5080cc4b26009bf87f.gif)](https://gyazo.com/dd8298446feeed5080cc4b26009bf87f)  
@@ -50,10 +50,9 @@ https://photo-organize.onrender.com
 **一覧ページ未登録時(スマートフォン)**  
 [![Image from Gyazo](https://i.gyazo.com/cf81c6962891f086954913b0d5cf81a9.gif)](https://gyazo.com/cf81c6962891f086954913b0d5cf81a9)
 
-**一覧ページ(スマートフォン)**  
-[![Image from Gyazo](https://i.gyazo.com/c8ddd7e848d3c084bdb5b16b73d47aba.jpg)](https://gyazo.com/c8ddd7e848d3c084bdb5b16b73d47aba) 
+**検索機能(スマートフォン)**  
+[![Image from Gyazo](https://i.gyazo.com/bc92645ebeef86eb0a806846a14fef87.png)](https://gyazo.com/bc92645ebeef86eb0a806846a14fef87)
   
-  t
   
 ## データベース設計  
 <img src="./images/er.png" width="600" alt="ER図">
@@ -69,6 +68,7 @@ https://photo-organize.onrender.com
 - **サーバーサイド**: Ruby 3.2 / Ruby on Rails 7.1  
 - **認証機能**: Devise  
 - **画像投稿**: Active Storage  
+- **検索機能**: Ransack
 - **データベース**: MySQL（開発） / PostgreSQL（本番）  
 - **デプロイ環境**: Render  
 - **テスト**: RSpec  
@@ -84,13 +84,12 @@ https://photo-organize.onrender.com
 ## 工夫したポイント  
 - 写真はビジュアル要素が強くそれ自体に色や情報量が多いため、視認性・操作性を損なわないよう背景色を白・文字色やボタン類も白黒で統一。UIのノイズを排除し写真を主役に。  
 - アクションの重要度に応じてボタンサイズにコントラストをつけ、特に「削除」や「ログアウト」などの重要操作はホバー時に強調されるようUIを調整。  
-- 投稿時に任意の情報を残せるよう、memo欄（最大250文字）を設置。自由記述でユーザーの情報整理を補助。  
+- 投稿時に任意の情報を残せるよう、memo欄（最大250文字）を設置。自由記述でユーザーの情報整理を補助。さらにフリーワード検索でtitle・memoから自在に検索表示ができる。  
 - 画像一覧にはTailwind CSSのレスポンシブグリッド（grid-cols）を利用し、スマートフォンでも2列表示を実現。画面サイズに応じて列数を自動調整し、どのデバイスでも快適に閲覧可能。  
 - 個人専用の写真管理ツールとして設計、未ログインユーザーのルート制御でセキュリティ面を考慮。  
   
   
-## 実装予定の機能  
-- 検索バーの設置: titleやmemoからフリーワードでの画像検索  
+## 実装予定の機能   
 - カテゴリー機能: ユーザーがオリジナルのカテゴリーを登録可能  
 - カテゴリー分類機能: カテゴリーごとにそれぞれのページを表示  
 

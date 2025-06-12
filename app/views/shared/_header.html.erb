@@ -3,32 +3,64 @@
 
     <!-- 左エリア：今後追加予定用 -->
     <div class="w-1/3 flex items-center">
-      <%# ハンバーガーや検索バーなど今後追加予定 %>
+       <% if user_signed_in? %>
+
+       <!-- 検索アイコン（スマホ） -->
+       <button id="open-search" class="sm:hidden text-xl">
+       <i class="fa-regular fa-magnifying-glass"></i>
+       </button>
+       <!-- 検索フォーム（PC） -->
+       <div id="search-form-container" class="hidden sm:flex"> 
+       <%= search_form_for @q, url: photos_path, method: :get, html: { class: "flex" } do |f| %>
+        
+         <%= f.search_field :title_or_memo_cont, placeholder: "keyword...", class: "w-[160px] rounded-l-md border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-0 focus:border-gray-500" %>
+         <%= f.submit "SEARCH",class: "rounded-r-md bg-black text-white px-4 py-2 text-sm hover:bg-gray-700 transition" %> 
+       <% end %>
+        </div>
+       <% else %>
+       <!-- ダミー -->
+         <div class="w-full h-1"></div>
+       <% end %>
     </div>
 
+     
+      
+
     <!-- 中央エリア：タイトル -->
-    <div class="w-1/3 flex justify-center text-center">
+    <div class="w-1/3 flex justify-center items-center text-center">
       <% if controller.action_name == 'index' %>
-        <h1 class="text-2xl font-bold tracking-wide">
+        <h1 class="responsive-header-title font-bold tracking-wide">
           Photo Organize
         </h1>
       <% else %>
         <%= link_to 'Photo Organize', authenticated_root_path,
-              class: 'text-2xl font-bold tracking-wide hover:opacity-60' %>
+              class: 'responsive-header-title font-bold tracking-wide hover:opacity-60' %>
       <% end %>
     </div>
 
+
+    
+    
     <!-- 右エリア：ユーザー名とログアウト -->
-    <div class="w-1/3 flex flex-col items-end text-right">
+    <div class="w-1/3 flex flex-col items-end text-right space-y-1 sm:space-y-0">
       <% if user_signed_in? %>
-        <span class="text-sm font-semibold text-gray-700">
+        <span class="text-xs sm:text-sm font-semibold text-gray-700">
           <%= current_user.nickname %>
         </span>
         <%= link_to 'LOG OUT', destroy_user_session_path,
               data: { turbo_method: :delete },
-              class: 'btn-danger-flat-mono mt-1' %>
+              class: 'btn-danger-flat-mono sm:mt-1' %>
+      <% else %>
+    <div class="w-full h-1"></div>
       <% end %>
     </div>
 
   </div>
 </header>
+
+
+
+
+
+
+

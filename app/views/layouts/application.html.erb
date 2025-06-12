@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%#link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,400;1,700&family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet"%>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     
     <%= javascript_importmap_tags %>
@@ -13,6 +14,20 @@
   <body class="flex flex-col min-h-screen h-full">
   
     <%= render "shared/header" %>
+
+    <!-- 検索モーダル -->
+  <div id="search-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden sm:hidden">
+    <div class="bg-white p-4 rounded shadow w-11/12 max-w-lg">
+      <%= search_form_for @q, url: photos_path, method: :get, html: { class: "w-full" } do |f| %>
+        <div class="flex w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"> 
+          <%= f.search_field :title_or_memo_cont, placeholder: "keyword...", class: "flex-1 rounded-l-md border border-gray-300 px-2 py-1 text-xs focus:outline-none focus:ring-0 focus:border-gray-500" %>
+          <%= f.submit "SEARCH", class: "rounded-r-md bg-black text-white px-2 py-1 text-xs hover:bg-gray-700 transition" %>
+        </div>
+      <% end %>
+      <button id="close-search" class="block mx-auto mt-4 text-sm text-gray-700 hover:text-black">✖ 閉じる</button>
+    </div>
+  </div>
+  
   <main class="flex-1 px-4 py-24 mx-auto <%= content_for?(:main_class) ? yield(:main_class) : 'max-w-3xl' %>">
     <%= yield %>
   </main>

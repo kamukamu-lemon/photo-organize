@@ -5,15 +5,15 @@
 /* Componentsレイヤー */
 @layer components {
   .btn-black {
-    @apply px-8 py-4 bg-black text-white text-xl rounded-md shadow hover:bg-gray-700 transition;
+    @apply px-4 py-2 sm:px-8 sm:py-4 text-base sm:text-xl bg-black text-white rounded-md shadow hover:bg-gray-700 transition;
   }
-
+  
   .btn-white-raised {
-    @apply px-4 py-2 bg-white text-black border border-gray-300  rounded-md shadow hover:bg-gray-100 transition;
+    @apply px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base bg-white text-black border border-gray-300  rounded-md shadow hover:bg-gray-100 transition;
   }
 
   .btn-danger-flat-mono {
-    @apply bg-white text-black px-4 py-2 rounded-md border transition hover:bg-red-100 hover:text-red-600;
+    @apply px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base bg-white text-black rounded-md border transition hover:bg-red-100 hover:text-red-600;
   }
 
   .custom-file-button {
@@ -22,6 +22,14 @@
       file:border file:rounded file:border-gray-400
       file:bg-white file:font-semibold
       hover:file:bg-gray-100;
+  }
+
+  .responsive-header-title {
+    @apply text-2xl sm:text-xl text-base; 
+  }
+
+  .responsive-button {
+    @apply text-xs  sm:text-sm 
   }
 }
 
@@ -38,3 +46,4 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
